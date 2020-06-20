@@ -1,22 +1,112 @@
-.inline-block {
-    display: inline-block;
-    vertical-align: top;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0; 
+    outline: 0;
+  }
+
+body {
+    font-family: Euclid Circular B;
+    line-height: 1.5;
+    color: white;
+    background-color: black;
 }
 
-.logo {
-    width: 23%;
-    padding: 1%;
-    text-align: center;
+.light_font {
+    font-weight: 100;
 }
 
-nav {
-    width: 73%;
-    padding: 1%;
+.left_nav {
+    width: 100px;
+    position: fixed;
+    border-radius: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    border-right: 1px solid rgba(255,255,255, 0.3);
+
 }
 
-ul {
-    width: 50%;
-    margin-left: auto;
+nav {  
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    height: 35%;
+    margin: auto;
+}
+
+nav a {
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    margin: auto;
+    color: white;
+}
+
+header {
+    height: 100vh;
+    text-align: right;
+    margin-left: 100px;
+}
+
+#header_period {
+    color: turquoise;
+}
+
+
+.header_content {
+    width: fit-content;
+    padding-right: 100px;
+    padding-top: 100px;
+    float: right;
+    font-family: ObjectSans-Regular;
+    font-weight: 100;
+}
+
+header h1 {
+    font-size: 95px;
+}
+
+header h2 {
+    font-size: 48px;
+}
+
+header h3 {
+    font-size: 32px;
+    padding-bottom: 50px;
+}
+
+
+header div p {
+    padding-top: 50px;
+    border-top: .25px solid rgba(255,255,255, 0.3);
+    float: right;
+}
+
+.workGrid {
+    margin-left: 100px;
+    display: grid;
+    grid-template-areas:
+    'footprint'
+    'adult-it';
+    grid-gap: 15px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.projects {
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255, 0.3);
+    height: 350px;
+}
+
+.footprint {
+    grid-area: footprint;
+}
+
+.adult-it {
+    grid-area: adult-it;
 }
 
 .heroImg {
@@ -32,7 +122,7 @@ ul {
 }
 
 footer {
-    background-color: #373738;
+
     left: 0;
     bottom: 0;
     width: 100%;
@@ -44,12 +134,9 @@ footer p {
     display: inline-block;
     vertical-align: top;
     padding: 25px;
+
 }
 
 img {
     width: 100%;
-}
-
-button {
-    
 }
