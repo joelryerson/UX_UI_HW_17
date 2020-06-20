@@ -1,3 +1,4 @@
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -9,11 +10,19 @@ body {
     font-family: Euclid Circular B;
     line-height: 1.5;
     color: white;
-    background-color: black;
+    background-color: white;
 }
 
 .light_font {
     font-weight: 100;
+}
+
+hr {
+    border: .5px solid rgba(255,255,255, 0.3);
+    width: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    align-self: flex-end;
 }
 
 .left_nav {
@@ -26,7 +35,7 @@ body {
     justify-content: center;
     background-color: transparent;
     border-right: 1px solid rgba(255,255,255, 0.3);
-
+    z-index: 2;
 }
 
 nav {  
@@ -44,22 +53,34 @@ nav a {
     color: white;
 }
 
-header {
+/* Header */
+
+.header_container_home {
     height: 100vh;
-    text-align: right;
-    margin-left: 100px;
+    padding-left: 100px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
-#header_period {
-    color: turquoise;
+.header_container_about {
+    height: 100vh;
+    padding-left: 100px;
+    background-color: #FD9967;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
 
 .header_content {
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-items: right;
+    text-align: right;
+    flex-basis: content;
     padding-right: 100px;
     padding-top: 100px;
-    float: right;
     font-family: ObjectSans-Regular;
     font-weight: 100;
 }
@@ -68,36 +89,35 @@ header h1 {
     font-size: 95px;
 }
 
+#header_period {
+    color: turquoise;
+}
+
 header h2 {
     font-size: 48px;
 }
 
 header h3 {
     font-size: 32px;
-    padding-bottom: 50px;
 }
 
-
-header div p {
-    padding-top: 50px;
-    border-top: .25px solid rgba(255,255,255, 0.3);
-    float: right;
-}
+/* Grid Container */
 
 .workGrid {
-    margin-left: 100px;
     display: grid;
     grid-template-areas:
     'footprint'
     'adult-it';
     grid-gap: 15px;
     padding-right: 100px;
-    padding-left: 100px;
+    padding-left: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .projects {
     background-color: transparent;
-    border: 1px solid rgba(255,255,255, 0.3);
+    border: 1px solid black;
     height: 350px;
 }
 
@@ -110,23 +130,24 @@ header div p {
 }
 
 .heroImg {
-    height: auto;
-    padding: 25px;
-    align: center;
+    object-fit: scale-down;
 }
 
-.content {
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
+.header_content_about {
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    flex-basis: content;
 }
+
+/* Footer */
 
 footer {
 
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -137,6 +158,35 @@ footer p {
 
 }
 
-img {
-    width: 100%;
+/* Mobile Media Query */
+
+
+
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        justify-content: start;
+    }
+    .header_content {
+        padding: inherit;
+    }
+    .left_nav {
+        display: none;
+    }
+    .workGrid {
+        display: grid;
+        grid-template-areas:
+        'footprint'
+        'adult-it';
+        grid-gap: 15px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+.mobile_nav {
+    display:none;
 }
